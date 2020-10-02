@@ -11,7 +11,7 @@ import {
   CTabContent,
   CTabPane,
 } from "@coreui/react";
-import { ChartHeader, PolarControlForm } from "../custom-components";
+import { ChartHeader, PolarControlForm } from "../basics";
 import Polar from "./Polar";
 import Radar from "./Radar";
 

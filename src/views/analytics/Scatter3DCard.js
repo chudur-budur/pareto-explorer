@@ -1,6 +1,6 @@
 import React from "react";
 import { CCard, CCardBody, CCardHeader, CCardFooter } from "@coreui/react";
-import { ChartHeader, Scatter3DControlForm } from "../custom-components";
+import { ChartHeader, Scatter3DControlForm } from "../basics";
 import Scatter3D from "./Scatter3D";
 
 class Scatter3DCard extends React.Component {

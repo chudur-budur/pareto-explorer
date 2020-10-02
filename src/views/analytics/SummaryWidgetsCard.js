@@ -1,6 +1,6 @@
 import React from "react";
 import { CRow, CCol, CCard, CCardBody, CCardHeader } from "@coreui/react";
-import { ChartHeader } from "../custom-components";
+import { ChartHeader } from "../basics";
 import {
   WidgetNumberOfPoints,
   WidgetNumberOfKneePoints,
