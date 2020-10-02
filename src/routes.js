@@ -62,8 +62,8 @@ const User = React.lazy(() => import("./views/users/User"));
 
 // Paretoexplorer components
 const Analytics = React.lazy(() => import("./views/analytics/Analytics"));
-const DecisionMaking = React.lazy(() => import("./views/dm/DecisionMaking"));
-const SpreadSheet = React.lazy(() => import("./views/ss/SpreadSheet"));
+const DecisionMaking = React.lazy(() => import("./views/mcdm/DecisionMaking"));
+const SpreadSheet = React.lazy(() => import("./views/spreadsheet/SpreadSheet"));
 
 const routes = [
   { path: "/", exact: true, name: "Home" },
@@ -130,8 +130,8 @@ const routes = [
     name: "Analytics",
     component: Analytics,
   },
-  { path: "/dm", name: "Decision-Making", component: DecisionMaking },
-  { path: "/ss", name: "Spread-Sheet", component: SpreadSheet },
+  { path: "/mcdm", name: "Decision-Making", component: DecisionMaking },
+  { path: "/spreadsheet", name: "Spread-Sheet", component: SpreadSheet },
 ];
 
 export default routes;

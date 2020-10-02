@@ -70,10 +70,10 @@ const TheHeader = () => {
           <CHeaderNavLink to="/analytics">Analytics</CHeaderNavLink>
         </CHeaderNavItem>
         <CHeaderNavItem className="px-3">
-          <CHeaderNavLink to="/dm">Decision Making</CHeaderNavLink>
+          <CHeaderNavLink to="/mcdm">Decision Making</CHeaderNavLink>
         </CHeaderNavItem>
         <CHeaderNavItem className="px-3">
-          <CHeaderNavLink to="/ss">Spread Sheet</CHeaderNavLink>
+          <CHeaderNavLink to="/spreadsheet">Spread Sheet</CHeaderNavLink>
         </CHeaderNavItem>
       </CHeaderNav>
 

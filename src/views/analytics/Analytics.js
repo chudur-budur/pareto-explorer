@@ -12,7 +12,7 @@ import SummaryWidgetsCard from "./SummaryWidgetsCard";
 const Analytics = ({ match }) => {
   var pf = getPf(match);
   return (
-    <CContainer className="mr-0 ml-0 pr-0 pl-0 pb-0 pt-0">
+    <CContainer fluid className="mr-0 ml-0 pr-0 pl-0 pb-0 pt-0">
       <CRow md="12">
         <CCol md="6" className="pr-1 pl-1">
           <Scatter3DCard pf={pf} />

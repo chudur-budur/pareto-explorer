@@ -220,7 +220,7 @@ export default [
   {
     _tag: "CSidebarNavItem",
     name: "Decision Making",
-    to: "/dm",
+    to: "/mcdm",
     icon: "cil-balance-scale",
     badge: {
       color: "info",
@@ -229,7 +229,7 @@ export default [
   {
     _tag: "CSidebarNavItem",
     name: "Spread Sheet",
-    to: "/ss",
+    to: "/spreadsheet",
     icon: "cil-spreadsheet",
     badge: {
       color: "info",
