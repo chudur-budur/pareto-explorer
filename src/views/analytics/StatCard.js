@@ -11,7 +11,7 @@ import {
   CTabContent,
   CTabPane,
 } from "@coreui/react";
-import { ChartHeader, StatControlForm } from "../basics";
+import { ChartHeader, StatControlForm } from "../pecomponents";
 import SingleBoxplot from "./SingleBoxplot";
 import PairDistributionPlot from "./PairDistributionPlot";
 

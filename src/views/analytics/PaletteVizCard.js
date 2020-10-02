@@ -11,7 +11,7 @@ import {
   CTabContent,
   CTabPane,
 } from "@coreui/react";
-import { ChartHeader, PaletteVizControlForm } from "../basics";
+import { ChartHeader, PaletteVizControlForm } from "../pecomponents";
 import PaletteViz from "./PaletteViz";
 
 class PaletteVizCard extends React.Component {

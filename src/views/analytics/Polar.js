@@ -8,7 +8,8 @@ import {
   decideColors,
   mapIndices,
   pushAnchors2D,
-} from "./Utils";
+  findClosestAnchorPoint,
+} from "../utils";
 import { toolbox, legend, dataZoom2D } from "./CommonEchartOptions";
 
 class Polar extends React.PureComponent {
@@ -32,10 +33,24 @@ class Polar extends React.PureComponent {
   getEmphasisData = (params) => {
     let emphasisData = [];
     if (this.props.pf.centroid_dist) {
-      emphasisData.push(["CD", this.props.pf.centroid_dist[params.dataIndex]]);
+      emphasisData.push([
+        "CD: ",
+        this.props.pf.centroid_dist[params.dataIndex],
+      ]);
     }
     if (this.props.pf.cv) {
-      emphasisData.push(["CV", this.props.pf.cv[params.dataIndex]]);
+      emphasisData.push(["CV: ", this.props.pf.cv[params.dataIndex]]);
+    }
+    if (this.props.pf.polar_anchors) {
+      let id = findClosestAnchorPoint(
+        params.value,
+        this.props.pf.polar_anchors
+      );
+      emphasisData.push([
+        "Close to f",
+        id === this.props.pf.m ? 1 : id + 1,
+        "int",
+      ]);
     }
     return emphasisData;
   };

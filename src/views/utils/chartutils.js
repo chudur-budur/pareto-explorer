@@ -1,91 +1,4 @@
-/**
- *
- * @param {*} a
- */
-export function transpose(a) {
-  // Calculate the width and height of the Array
-  let w = a.length || 0;
-  let h = a[0] instanceof Array ? a[0].length : 0;
-  // In case it is a zero matrix, no transpose routine needed.
-  if (h === 0 || w === 0) {
-    return [];
-  }
-
-  var t = [];
-  // Loop through every item in the outer array (height)
-  for (let i = 0; i < h; i++) {
-    // Insert a new row (array)
-    t[i] = [];
-    // Loop through every item per item in outer array (width)
-    for (let j = 0; j < w; j++) {
-      // Save transposed data.
-      t[i][j] = a[j][i];
-    }
-  }
-  return t;
-}
-
-/**
- *
- * @param {*} vec
- */
-export var sortVector = (vec) => {
-  let vec_ = vec.slice().sort(function (a, b) {
-    return a < b ? -1 : a > b ? 1 : 0;
-  });
-  return vec_;
-};
-
-/**
- *
- * @param {*} indices
- * @param {*} data
- */
-export var sortIndices = (indices, data) => {
-  let indices_ = indices.slice().sort(function (a, b) {
-    return data[a] < data[b] ? -1 : data[a] > data[b] ? 1 : 0;
-  });
-  return indices_;
-};
-
-/**
- *
- * @param {*} dataIndex
- * @param {*} categoryIndex
- */
-export var mapIndex = (dataIndex, categoryIndex) => {
-  return categoryIndex[dataIndex];
-};
-
-/**
- * Select rows of arr indexed by idx. We are doing this with loop
- * since it's faster than map.
- * @param {Array} arr
- * @param {Array} idx
- */
-export function mapIndices(arr, idx) {
-  let arr_ = new Array(idx.length);
-  for (let i = 0; i < idx.length; i++) {
-    arr_[i] = arr[idx[i]];
-  }
-  return arr_;
-}
-
-/**
- * Select rows of arr indexed by idx then suffle the columns
- * according to col. We are doing this with loop since it's
- * faster than map.
- * @param {Array} arr
- * @param {Array} idx
- * @param {Array} col
- */
-export function mapIndicesAndSelectColumns(arr, idx, col) {
-  let arr_ = new Array(idx.length);
-  for (let i = 0; i < idx.length; i++) {
-    arr_[i] = [arr[idx[i]][col[0]], arr[idx[i]][col[1]], arr[idx[i]][col[2]]];
-  }
-  return arr_;
-}
+import { smallCircle, buildTooltipDom, smallCircleWithLine } from "./domutils";
 
 /**
  *
@@ -115,99 +28,6 @@ export var getPointSizeFromMu = (mu, factor, seriesIndex) => {
 
 /**
  *
- * @param {*} vec
- * @param {*} prefix
- * @param {*} format
- */
-export var formatVecToDom = (vec, prefix = `<b>f</b>`, format = "vertical") => {
-  let dom = ``;
-  if (Array.isArray(vec)) {
-    if (format === "vertical") {
-      dom = !Array.isArray(prefix)
-        ? vec
-            .map((v, i) => {
-              return (
-                `${prefix}<sub>${i + 1}</sub>&nbsp;:&nbsp;` +
-                `${parseFloat(v).toExponential(2)}`
-              );
-            })
-            .join(`<br/>`)
-        : vec
-            .map((v, i) => {
-              return `${prefix[i]}&nbsp;:&nbsp;${parseFloat(v).toExponential(
-                2
-              )}`;
-            })
-            .join(`<br/>`);
-    } else {
-      let prefix_ = !Array.isArray(prefix)
-        ? `[` +
-          prefix
-            .map((v, i) => {
-              return `${prefix}<sub>${i + 1}</sub>`;
-            })
-            .join(", ") +
-          `]&nbsp:`
-        : `[` +
-          prefix
-            .map((v, i) => {
-              return `${prefix[i]}`;
-            })
-            .join(", ") +
-          `]`;
-      let values =
-        `[` +
-        vec
-          .map((v, i) => {
-            return `${parseFloat(v).toFixed(1)}`;
-          })
-          .join(", ") +
-        `]`;
-      dom = prefix_ + `&nbsp;:&nbsp;` + values;
-    }
-  } else {
-    dom = `${prefix}&nbsp;:&nbsp${vec}`;
-  }
-  return dom;
-};
-
-/**
- *
- * @param {*} color
- */
-export var smallCircle = (color = `green`) => {
-  let circle =
-    `<circle cx="5" cy="5" r="5" stroke-width="1"` +
-    ` stroke=` +
-    color +
-    ` fill=` +
-    color +
-    ` />`;
-  return `<svg height="10" width="15">` + circle + `</svg>`;
-};
-
-/**
- *
- * @param {*} color
- */
-export var smallCircleWithLine = (color = `green`) => {
-  let circle =
-    `<circle cx="10" cy="5" r="5" stroke-width="1"` +
-    ` stroke=` +
-    color +
-    ` fill=` +
-    color +
-    ` />`;
-  let line =
-    `<line x1="0" y1="5" x2="20" y2="5" style="stroke:` +
-    `dark` +
-    color +
-    `;stroke-width:2" />`;
-  return `<svg height="10" width="20">` + circle + line + `</svg>`;
-};
-
-/**
- *
  * @param {*} params
  */
 export var getGeometricElementType = (params) => {
@@ -218,57 +38,6 @@ export var getGeometricElementType = (params) => {
   } else {
     return "Unknwon";
   }
-};
-
-/**
- *
- * @param {*} params
- * @param {*} emphasisData
- */
-export var buildEmphasisString = (params, emphasisData) => {
-  let dom = [];
-  if (emphasisData) {
-    for (let [prefix, value] of emphasisData) {
-      dom.push(prefix + ": " + value.toExponential(2));
-    }
-  }
-  return dom.length > 0 ? dom.join("\n") : "ID: " + params.dataIndex;
-};
-
-/**
- *
- * @param {*} params
- * @param {*} title
- * @param {*} values
- * @param {*} extraValues
- * @param {*} globalIndices
- */
-export var buildTooltipDom = (
-  params,
-  title,
-  values,
-  extraValues,
-  globalIndices
-) => {
-  let dom = [];
-  let id = globalIndices
-    ? `ID&nbsp;:&nbsp;${globalIndices[params.dataIndex]}`
-    : `ID&nbsp;:&nbsp;${params.dataIndex}`;
-  dom.push(title ? title : smallCircle(params.color) + id);
-  if (values && values.length > 0) {
-    for (let [pfx, data] of values) {
-      let expr = formatVecToDom(data, pfx);
-      dom.push(expr);
-    }
-  }
-  if (extraValues && extraValues.length > 0) {
-    for (let [pfx, data] of extraValues) {
-      let expr = formatVecToDom(data, pfx, "horizontal");
-      dom.push(expr);
-    }
-  }
-  dom = dom.join(`<br/>`);
-  return `<div>` + dom + `</div>`;
 };
 
 /**
@@ -299,7 +68,7 @@ export var getCircle2D = (origin, radius, n, z = null) => {
   return points;
 };
 
-export var fixPointSize = (params) => {
+var fixPointSize = (params) => {
   return params.value[0] * 0;
 };
 

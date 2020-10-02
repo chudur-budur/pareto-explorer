@@ -1,6 +1,6 @@
 import React from "react";
 import { CCard, CCardBody, CCardHeader, CCardFooter } from "@coreui/react";
-import { ChartHeader, PCPControlForm } from "../basics";
+import { ChartHeader, PCPControlForm } from "../pecomponents";
 import PCP from "./PCP";
 
 class PCPCard extends React.Component {

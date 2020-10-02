@@ -8,16 +8,19 @@ import {
   mapIndicesAndSelectColumns,
   getPointSizeFromMu,
   decideColors,
-} from "./Utils";
+} from "../utils";
 
 class Scatter3D extends React.PureComponent {
   getEmphasisData = (params) => {
     let emphasisData = [];
     if (this.props.pf.centroid_dist) {
-      emphasisData.push(["CD", this.props.pf.centroid_dist[params.dataIndex]]);
+      emphasisData.push([
+        "CD: ",
+        this.props.pf.centroid_dist[params.dataIndex],
+      ]);
     }
     if (this.props.pf.cv) {
-      emphasisData.push(["CV", this.props.pf.cv[params.dataIndex]]);
+      emphasisData.push(["CV: ", this.props.pf.cv[params.dataIndex]]);
     }
     return emphasisData;
   };

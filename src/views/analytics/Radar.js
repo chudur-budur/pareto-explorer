@@ -6,7 +6,7 @@ import {
   decideColors,
   buildTooltipDom,
   getRadialIndicators,
-} from "./Utils";
+} from "../utils";
 
 class Radar extends React.PureComponent {
   getEmphasis = () => {

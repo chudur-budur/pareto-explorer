@@ -10,7 +10,7 @@ import {
 import CIcon from "@coreui/icons-react";
 import ChartLineSimple from "../charts/ChartLineSimple";
 import ChartBarSimple from "../charts/ChartBarSimple";
-import { sortVector, sortIndices } from "./Utils";
+import { sortVector, sortIndices } from "../utils";
 
 var getMeans = (distribution) => {
   let means = [];

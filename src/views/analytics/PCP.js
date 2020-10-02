@@ -1,7 +1,7 @@
 import React from "react";
 import ReactEcharts from "echarts-for-react";
 import { toolbox, legend } from "./CommonEchartOptions";
-import { mapIndices, decideColors } from "./Utils";
+import { mapIndices, decideColors } from "../utils";
 
 class PCP extends React.PureComponent {
   getDefaultOption = () => {

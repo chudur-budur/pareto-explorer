@@ -1,6 +1,6 @@
 import React from "react";
 import ReactEcharts from "echarts-for-react";
-import { sortIndices, mapIndices, formatVecToDom } from "./Utils";
+import { sortIndices, mapIndices, formatVecToDom } from "../utils";
 
 class PairDistributionPlot extends React.PureComponent {
   getDefaultOption = () => {
