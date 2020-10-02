@@ -1,4 +1,6 @@
-![Logo of ParetoExplorer](./src/assets/img/pareto-explorer-logo.svg)
+<div style="width: 1488px; height: 300px; overflow: hidden">
+  <img src="./src/assets/img/pareto-explorer-logo.svg" width="1488px" height="328px">
+</div>
 
 A [React.js](https://reactjs.org/) app to showcase the capabilities of [pviz](https://github.com/chudur-budur/pviz). Built on top of [CoreUI-React](https://github.com/coreui/coreui-react) and Apache [echarts](https://github.com/apache/incubator-echarts).
 
