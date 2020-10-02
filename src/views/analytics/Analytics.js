@@ -17,9 +17,9 @@ const Analytics = ({ match }) => {
         <CCol md="6" className="pr-1 pl-1">
           <Scatter3DCard pf={pf} />
         </CCol>
-        <CCol md="6" className="pr-1 pl-1">
+        {/* <CCol md="6" className="pr-1 pl-1">
           <SummaryWidgetsCard width="6" pf={pf} />
-        </CCol>
+        </CCol> */}
       </CRow>
       <CRow>
         <CCol md="12" className="pr-1 pl-1">
