@@ -1,4 +1,4 @@
-![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
+![Image of Yaktocat](./src/assets/img/pareto-explorer-logo.svg)
 
 # pareto-explorer
 
