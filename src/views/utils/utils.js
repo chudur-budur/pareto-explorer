@@ -87,6 +87,11 @@ export function mapIndicesAndSelectColumns(arr, idx, col) {
   return arr_;
 }
 
+/**
+ *
+ * @param {*} point
+ * @param {*} anchors
+ */
 export var findClosestAnchorPoint = (point, anchors) => {
   let min = Number.POSITIVE_INFINITY,
     id = -1;
