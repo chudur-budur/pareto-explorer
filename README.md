@@ -1,6 +1,4 @@
-![Image of Yaktocat](./src/assets/img/pareto-explorer-logo.svg)
-
-# pareto-explorer
+![Logo of ParetoExplorer](./src/assets/img/pareto-explorer-logo.svg)
 
 A [React.js](https://reactjs.org/) app to showcase the capabilities of [pviz](https://github.com/chudur-budur/pviz). Built on top of [CoreUI-React](https://github.com/coreui/coreui-react) and Apache [echarts](https://github.com/apache/incubator-echarts).
 
