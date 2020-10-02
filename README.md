@@ -33,7 +33,7 @@ Dependencies are handled by **npm**.
 
 ## See also
 
-[Create-React-App](CRA.md)
-[Readme CoreUI React](./COREUI-REACT.md)
-[Readme CoreUI](./COREUI.md)
-[Readme Yarn](./YARN.md)
+- [Create-React-App](CRA.md)
+- [Readme CoreUI React](./COREUI-REACT.md)
+- [Readme CoreUI](./COREUI.md)
+- [Readme Yarn](./YARN.md)
