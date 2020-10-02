@@ -235,14 +235,14 @@ export default [
       color: "info",
     },
   },
-  /*
+  // *-------------------------*
   // Original nav
   {
     _tag: "CSidebarNavDivider",
   },
   {
     _tag: "CSidebarNavTitle",
-    _children: ["Original Nav"],
+    _children: ["CoreUI Examples"],
   },
   {
     _tag: "CSidebarNavItem",
@@ -548,5 +548,5 @@ export default [
   {
     _tag: "CSidebarNavDivider",
     className: "m-2",
-  },*/
+  },
 ];
