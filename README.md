@@ -1,3 +1,5 @@
+![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
+
 # pareto-explorer
 
 A [React.js](https://reactjs.org/) app to showcase the capabilities of [pviz](https://github.com/chudur-budur/pviz). Built on top of [CoreUI-React](https://github.com/coreui/coreui-react) and Apache [echarts](https://github.com/apache/incubator-echarts).
