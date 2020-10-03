@@ -68,10 +68,6 @@ export var getCircle2D = (origin, radius, n, z = null) => {
   return points;
 };
 
-var fixPointSize = (params) => {
-  return params.value[0] * 0;
-};
-
 /**
  *
  * @param {*} series
@@ -87,9 +83,6 @@ export var pushAnchors3D = (series, anchors, anchorPrefix = "f", props) => {
       data: z.slice(0, z.length - 1),
       itemStyle: {
         color: "grey",
-      },
-      symbolSize: (value, params) => {
-        fixPointSize(params);
       },
       label: {
         show: true,
@@ -192,9 +185,6 @@ export var pushAnchors2D = (series, anchors, anchorPrefix = "f") => {
     data: anchors.slice(0, anchors.length - 1),
     itemStyle: {
       color: "grey",
-    },
-    symbolSize: (value, params) => {
-      fixPointSize(params);
     },
     label: {
       show: true,

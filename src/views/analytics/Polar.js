@@ -152,7 +152,7 @@ class Polar extends React.PureComponent {
     };
   };
 
-  getGraphicElements = () => {
+  /* getGraphicElements = () => {
     return [
       {
         elements: [
@@ -189,7 +189,7 @@ class Polar extends React.PureComponent {
         ],
       },
     ];
-  };
+  }; */
 
   getOption = () => {
     //this.testGraphics();
@@ -237,13 +237,13 @@ class Polar extends React.PureComponent {
         this.props.pf.muid
       );
     }
-    /* option.series = pushAnchors2D(
+    option.series = pushAnchors2D(
       option.series,
       this.props.pf.polar_anchors,
       this.props.anchorPrefix,
       this.props
-    ); */
-    option.graphic = this.getGraphicElements();
+    );
+    // option.graphic = this.getGraphicElements();
     return option;
   };
 
