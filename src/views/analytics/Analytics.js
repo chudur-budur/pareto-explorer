@@ -28,9 +28,6 @@ class Analytics extends React.Component {
         (result) => {
           if (result !== null) {
             const object = JSON.parse(result);
-            console.log(
-              "object.name = " + object.name + ", object.m = " + object.m
-            );
             this.setState({ isLoaded: true, name: object.name, data: object });
           } else {
             this.setState({
@@ -55,10 +52,6 @@ class Analytics extends React.Component {
   };
 
   componentDidMount() {
-    console.log(
-      "this.props.match.params.paretoFront = " +
-        this.props.match.params.paretoFront
-    );
     this.fetchData();
   }
 
@@ -66,21 +59,14 @@ class Analytics extends React.Component {
     if (
       prevProps.match.params.paretoFront !== this.props.match.params.paretoFront
     ) {
-      console.log(
-        "this.props.match.params.paretoFront = " +
-          this.props.match.params.paretoFront
-      );
       this.fetchData();
     }
   }
 
   render() {
-    const { error, isLoaded, data } = this.state;
+    const { error, isLoaded, name, data } = this.state;
     console.log(
-      "data.name = " +
-        JSON.stringify(data.name) +
-        ", data.m = " +
-        JSON.stringify(data.m)
+      "name = " + JSON.stringify(name) + ", data.m = " + JSON.stringify(data.m)
     );
     return (
       <>
@@ -89,9 +75,9 @@ class Analytics extends React.Component {
             <CCol md="6" className="pr-1 pl-1">
               <Scatter3DCard pf={data} />
             </CCol>
-            {/* <CCol md="6" className="pr-1 pl-1">
-      <SummaryWidgetsCard width="6" pf={pf} />
-    </CCol> */}
+            <CCol md="6" className="pr-1 pl-1">
+              <SummaryWidgetsCard width="6" pf={data} />
+            </CCol>
           </CRow>
           <CRow>
             <CCol md="12" className="pr-1 pl-1">

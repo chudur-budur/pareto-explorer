@@ -7,8 +7,8 @@ from flask import Flask
 app = Flask(__name__)
 
 
-def make_path(name):
-    parts = name.split('-')
+def make_path(pf):
+    parts = pf.split('-')
     dir_name = '-'.join(parts[:-1])
     dim = parts[-1]
     path = os.path.join('./data', dir_name, dim, 'index.js')
@@ -42,24 +42,15 @@ def parse_json(path):
     return jstr
 
 
-@app.route('/time')
-def get_current_time():
-    return {'time': time.time()}
-
-
-@app.route('/name')
-def get_name():
-    return {'name': 'mofiz'}
-
-
 @app.route('/api/<string:pf>')
 def get_pf(pf):
     print("Received request for " + pf)
     path = make_path(pf)
-    print("Fetching " + path)
+    print("Fetching " + path + ' ...')
     data = 'null'
     if os.path.exists(path):
         data = json.dumps(parse_json(path))
+        print("Dispatching data ...")
         # print(data)
     return data
 
