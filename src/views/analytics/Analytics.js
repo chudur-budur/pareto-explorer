@@ -73,28 +73,28 @@ class Analytics extends React.Component {
         <CContainer fluid className="mr-0 ml-0 pr-0 pl-0 pb-0 pt-0">
           <CRow md="12">
             <CCol md="6" className="pr-1 pl-1">
-              <Scatter3DCard pf={data} />
+              <Scatter3DCard pf={data} isLoaded={isLoaded} />
             </CCol>
             <CCol md="6" className="pr-1 pl-1">
-              <SummaryWidgetsCard width="6" pf={data} />
+              <SummaryWidgetsCard width="6" pf={data} isLoaded={isLoaded} />
             </CCol>
           </CRow>
           <CRow>
             <CCol md="12" className="pr-1 pl-1">
-              <PCPCard pf={data} />
+              <PCPCard pf={data} isLoaded={isLoaded} />
             </CCol>
           </CRow>
           <CRow md="12">
             <CCol md="12" className="pr-1 pl-1">
-              <PaletteVizCard pf={data} />
+              <PaletteVizCard pf={data} isLoaded={isLoaded} />
             </CCol>
           </CRow>
           <CRow md="12">
             <CCol md="6" className="pr-1 pl-1">
-              <PolarCard pf={data} />
+              <PolarCard pf={data} isLoaded={isLoaded} />
             </CCol>
             <CCol md="6" className="pr-1 pl-1">
-              <StatCard pf={data} />
+              <StatCard pf={data} isLoaded={isLoaded} />
             </CCol>
           </CRow>
         </CContainer>

@@ -11,7 +11,7 @@ import {
   CTabContent,
   CTabPane,
 } from "@coreui/react";
-import { ChartHeader, PaletteVizControlForm } from "../pecomponents";
+import { ChartHeader, PaletteVizControlForm, Spinner } from "../pecomponents";
 import PaletteViz from "./PaletteViz";
 
 class PaletteVizCard extends React.Component {
@@ -23,6 +23,7 @@ class PaletteVizCard extends React.Component {
       colorScheme: "color-by-centroid",
       psf: this.defaultPsf,
       ksf: this.defaultKsf,
+      isLoaded: false,
     };
   }
 
@@ -37,6 +38,16 @@ class PaletteVizCard extends React.Component {
   receiveKneeSize = (params) => {
     this.setState({ ksf: params });
   };
+
+  componentDidMount() {
+    this.setState({ isLoaded: this.props.isLoaded });
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.isLoaded !== this.props.isLoaded) {
+      this.setState({ isLoaded: this.props.isLoaded });
+    }
+  }
 
   render() {
     return (
@@ -57,30 +68,34 @@ class PaletteVizCard extends React.Component {
                 <CNavLink>Radviz</CNavLink>
               </CNavItem>
             </CNav>
-            <CTabContent>
-              <CTabPane>
-                <PaletteViz
-                  mode="star"
-                  pf={this.props.pf}
-                  dataNames={["PF", "Knees"]}
-                  anchorPrefix={"f"}
-                  colorScheme={this.state.colorScheme}
-                  psf={this.state.psf}
-                  ksf={this.state.ksf}
-                />
-              </CTabPane>
-              <CTabPane>
-                <PaletteViz
-                  mode="radviz"
-                  pf={this.props.pf}
-                  dataNames={["PF", "Knees"]}
-                  anchorPrefix={"f"}
-                  colorScheme={this.state.colorScheme}
-                  psf={this.state.psf}
-                  ksf={this.state.ksf}
-                />
-              </CTabPane>
-            </CTabContent>
+            {this.state.isLoaded ? (
+              <CTabContent>
+                <CTabPane>
+                  <PaletteViz
+                    mode="star"
+                    pf={this.props.pf}
+                    dataNames={["PF", "Knees"]}
+                    anchorPrefix={"f"}
+                    colorScheme={this.state.colorScheme}
+                    psf={this.state.psf}
+                    ksf={this.state.ksf}
+                  />
+                </CTabPane>
+                <CTabPane>
+                  <PaletteViz
+                    mode="radviz"
+                    pf={this.props.pf}
+                    dataNames={["PF", "Knees"]}
+                    anchorPrefix={"f"}
+                    colorScheme={this.state.colorScheme}
+                    psf={this.state.psf}
+                    ksf={this.state.ksf}
+                  />
+                </CTabPane>
+              </CTabContent>
+            ) : (
+              <Spinner />
+            )}
           </CTabs>
         </CCardBody>
         <CCardFooter className="pl-2 pt-2 pr-2 pb-2">

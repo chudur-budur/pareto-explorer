@@ -11,7 +11,7 @@ import {
   CTabContent,
   CTabPane,
 } from "@coreui/react";
-import { ChartHeader, StatControlForm } from "../pecomponents";
+import { ChartHeader, StatControlForm, Spinner } from "../pecomponents";
 import SingleBoxplot from "./SingleBoxplot";
 import PairDistributionPlot from "./PairDistributionPlot";
 
@@ -23,6 +23,7 @@ class StatCard extends React.Component {
       sortOrder: "-1",
       showMu: true,
       showCv: true,
+      isLoaded: false,
     };
   }
 
@@ -49,6 +50,16 @@ class StatCard extends React.Component {
       this.setState({ showCv: params });
     }
   };
+
+  componentDidMount() {
+    this.setState({ isLoaded: this.props.isLoaded });
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.isLoaded !== this.props.isLoaded) {
+      this.setState({ isLoaded: this.props.isLoaded });
+    }
+  }
 
   renderBoxplotF = () => {
     if (this.props.pf.distribution_f) {
@@ -166,13 +177,17 @@ class StatCard extends React.Component {
                 </CNavItem>
               )} */}
             </CNav>
-            <CTabContent>
-              {this.renderBoxplotF()}
-              {this.renderBoxplotX()}
-              {/* {this.renderBoxplotG()} */}
-              {/* {(this.props.pf.mu || this.props.pf.cv) &&
+            {this.state.isLoaded ? (
+              <CTabContent>
+                {this.renderBoxplotF()}
+                {this.renderBoxplotX()}
+                {/* {this.renderBoxplotG()} */}
+                {/* {(this.props.pf.mu || this.props.pf.cv) &&
                 this.renderPairDistributionPlot()} */}
-            </CTabContent>
+              </CTabContent>
+            ) : (
+              <Spinner />
+            )}
           </CTabs>
         </CCardBody>
         <CCardFooter className="pl-2 pt-2 pr-2 pb-2">

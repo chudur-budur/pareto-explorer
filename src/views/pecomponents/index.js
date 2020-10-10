@@ -39,4 +39,5 @@ export {
   KneeLineWidthSelectionComponent,
   StatDataSelectionComponent,
   StatSortOrderSelectionComponent,
+  Spinner,
 } from "./ComponentLibrary";

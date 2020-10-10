@@ -1,6 +1,6 @@
 import React from "react";
 import { CCard, CCardBody, CCardHeader, CCardFooter } from "@coreui/react";
-import { ChartHeader, Scatter3DControlForm } from "../pecomponents";
+import { ChartHeader, Scatter3DControlForm, Spinner } from "../pecomponents";
 import Scatter3D from "./Scatter3D";
 
 class Scatter3DCard extends React.Component {
@@ -15,6 +15,7 @@ class Scatter3DCard extends React.Component {
       colorScheme: "color-by-centroid",
       psf: this.defaultPsf,
       ksf: this.defaultKsf,
+      isLoaded: false,
     };
   }
 
@@ -34,6 +35,16 @@ class Scatter3DCard extends React.Component {
     this.setState({ ksf: params });
   };
 
+  componentDidMount() {
+    this.setState({ isLoaded: this.props.isLoaded });
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.isLoaded !== this.props.isLoaded) {
+      this.setState({ isLoaded: this.props.isLoaded });
+    }
+  }
+
   render() {
     return (
       <CCard>
@@ -44,15 +55,19 @@ class Scatter3DCard extends React.Component {
           />
         </CCardHeader>
         <CCardBody className="pl-2 pt-3 pr-2 pb-2">
-          <Scatter3D
-            pf={this.props.pf}
-            dataNames={["PF", "Knees"]}
-            axes={this.state.axes}
-            axisLabelPrefix={"f"}
-            colorScheme={this.state.colorScheme}
-            ksf={this.state.ksf}
-            psf={this.state.psf}
-          />
+          {this.state.isLoaded ? (
+            <Scatter3D
+              pf={this.props.pf}
+              dataNames={["PF", "Knees"]}
+              axes={this.state.axes}
+              axisLabelPrefix={"f"}
+              colorScheme={this.state.colorScheme}
+              ksf={this.state.ksf}
+              psf={this.state.psf}
+            />
+          ) : (
+            <Spinner />
+          )}
         </CCardBody>
         <CCardFooter className="pl-2 pt-2 pr-2 pb-2">
           <Scatter3DControlForm

@@ -1,5 +1,12 @@
 import React from "react";
-import { CCol, CCardHeader, CLabel, CSwitch } from "@coreui/react";
+import {
+  CCol,
+  CCardHeader,
+  CLabel,
+  CSwitch,
+  CSpinner,
+  CJumbotron,
+} from "@coreui/react";
 import {
   CombinatorialAxesSelection,
   TwoWayToggle,
@@ -202,5 +209,23 @@ export var StatSortOrderSelectionComponent = (props) => {
         />
       </CCol>
     </>
+  );
+};
+
+export var Spinner = () => {
+  return (
+    <CJumbotron>
+      <h1 className="display-1" align="center">
+        Loading
+      </h1>
+      <br />
+      <div align="center">
+        <CSpinner
+          color="primary"
+          align="center"
+          style={{ width: "7.33rem", height: "7.33rem" }}
+        />
+      </div>
+    </CJumbotron>
   );
 };

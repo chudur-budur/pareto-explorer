@@ -1,6 +1,6 @@
 import React from "react";
 import { CCard, CCardBody, CCardHeader, CCardFooter } from "@coreui/react";
-import { ChartHeader, PCPControlForm } from "../pecomponents";
+import { ChartHeader, PCPControlForm, Spinner } from "../pecomponents";
 import PCP from "./PCP";
 
 class PCPCard extends React.Component {
@@ -13,6 +13,7 @@ class PCPCard extends React.Component {
       isSmooth: false,
       lineWidth: this.defaultLineWidth,
       lineWidthKnee: this.defaultLineWidthKnee,
+      isLoaded: false,
     };
   }
 
@@ -37,6 +38,16 @@ class PCPCard extends React.Component {
     this.setState({ lineWidthKnee: params });
   };
 
+  componentDidMount() {
+    this.setState({ isLoaded: this.props.isLoaded });
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.isLoaded !== this.props.isLoaded) {
+      this.setState({ isLoaded: this.props.isLoaded });
+    }
+  }
+
   render() {
     return (
       <CCard>
@@ -47,15 +58,19 @@ class PCPCard extends React.Component {
           />
         </CCardHeader>
         <CCardBody className="pl-2 pt-3 pr-2 pb-2">
-          <PCP
-            pf={this.props.pf}
-            dataNames={["PF", "Knees"]}
-            axisLabelPrefix={"f"}
-            colorScheme={this.state.colorScheme}
-            isSmooth={this.state.isSmooth}
-            lineWidth={this.state.lineWidth}
-            lineWidthKnee={this.state.lineWidthKnee}
-          />
+          {this.state.isLoaded ? (
+            <PCP
+              pf={this.props.pf}
+              dataNames={["PF", "Knees"]}
+              axisLabelPrefix={"f"}
+              colorScheme={this.state.colorScheme}
+              isSmooth={this.state.isSmooth}
+              lineWidth={this.state.lineWidth}
+              lineWidthKnee={this.state.lineWidthKnee}
+            />
+          ) : (
+            <Spinner />
+          )}
         </CCardBody>
         <CCardFooter className="pl-2 pt-2 pr-2 pb-2">
           <PCPControlForm

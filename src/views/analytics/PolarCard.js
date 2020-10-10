@@ -11,7 +11,7 @@ import {
   CTabContent,
   CTabPane,
 } from "@coreui/react";
-import { ChartHeader, PolarControlForm } from "../pecomponents";
+import { ChartHeader, PolarControlForm, Spinner } from "../pecomponents";
 import Polar from "./Polar";
 import Radar from "./Radar";
 
@@ -24,6 +24,7 @@ class PolarCard extends React.Component {
       colorScheme: "color-by-centroid",
       psf: this.defaultPsf,
       ksf: this.defaultKsf,
+      isLoaded: false,
     };
   }
 
@@ -38,6 +39,16 @@ class PolarCard extends React.Component {
   receivePointSize = (params) => {
     this.setState({ psf: params });
   };
+
+  componentDidMount() {
+    this.setState({ isLoaded: this.props.isLoaded });
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.isLoaded !== this.props.isLoaded) {
+      this.setState({ isLoaded: this.props.isLoaded });
+    }
+  }
 
   render() {
     return (
@@ -61,40 +72,44 @@ class PolarCard extends React.Component {
                 <CNavLink>Radar</CNavLink>
               </CNavItem>
             </CNav>
-            <CTabContent>
-              <CTabPane>
-                <Polar
-                  mode="star"
-                  pf={this.props.pf}
-                  dataNames={["PF", "Knees"]}
-                  anchorPrefix={"f"}
-                  colorScheme={this.state.colorScheme}
-                  psf={this.state.psf}
-                  ksf={this.state.ksf}
-                />
-              </CTabPane>
-              <CTabPane>
-                <Polar
-                  mode="radviz"
-                  pf={this.props.pf}
-                  dataNames={["PF", "Knees"]}
-                  anchorPrefix={"f"}
-                  colorScheme={this.state.colorScheme}
-                  psf={this.state.psf}
-                  ksf={this.state.ksf}
-                />
-              </CTabPane>
-              <CTabPane>
-                <Radar
-                  pf={this.props.pf}
-                  dataNames={["PF", "Knees"]}
-                  indicatorPrefix={"f"}
-                  colorScheme={this.state.colorScheme}
-                  psf={this.state.psf}
-                  ksf={this.state.ksf}
-                />
-              </CTabPane>
-            </CTabContent>
+            {this.state.isLoaded ? (
+              <CTabContent>
+                <CTabPane>
+                  <Polar
+                    mode="star"
+                    pf={this.props.pf}
+                    dataNames={["PF", "Knees"]}
+                    anchorPrefix={"f"}
+                    colorScheme={this.state.colorScheme}
+                    psf={this.state.psf}
+                    ksf={this.state.ksf}
+                  />
+                </CTabPane>
+                <CTabPane>
+                  <Polar
+                    mode="radviz"
+                    pf={this.props.pf}
+                    dataNames={["PF", "Knees"]}
+                    anchorPrefix={"f"}
+                    colorScheme={this.state.colorScheme}
+                    psf={this.state.psf}
+                    ksf={this.state.ksf}
+                  />
+                </CTabPane>
+                <CTabPane>
+                  <Radar
+                    pf={this.props.pf}
+                    dataNames={["PF", "Knees"]}
+                    indicatorPrefix={"f"}
+                    colorScheme={this.state.colorScheme}
+                    psf={this.state.psf}
+                    ksf={this.state.ksf}
+                  />
+                </CTabPane>
+              </CTabContent>
+            ) : (
+              <Spinner />
+            )}
           </CTabs>
         </CCardBody>
         <CCardFooter className="pl-2 pt-2 pr-2 pb-2">
