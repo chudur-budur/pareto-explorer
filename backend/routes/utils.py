@@ -1,30 +1,7 @@
-"""api.py -- A RESTful API to connect to `pviz` through flask
-    This module provides a RESTful API to connect to `pviz` [1]_ 
-    capabilities through a `flask` service endpoint. This module
-    serves as the backend to the `pareto-explorer` app.
-
-    Copyright (C) 2016
-    Computational Optimization and Innovation (COIN) Laboratory
-    Department of Computer Science and Engineering
-    Michigan State University
-    428 S. Shaw Lane, Engineering Building
-    East Lansing, MI 48824-1226, USA
-    
-    References
-    ----------
-    .. [1] [pviz](https://github.com/chudur-budur/pviz)
-
-.. moduleauthor:: AKM Khaled Talukder <talukde1@msu.edu>
-"""
-
-
-import time
 import os
 import json
-from flask import Flask
 
-# app = Flask(__name__)
-app = Flask(__name__, static_folder='../build', static_url_path='')
+__all__ = ["make_path", "parse_json"]
 
 
 def make_path(pf):
@@ -48,7 +25,7 @@ def make_path(pf):
     parts = pf.split('-')
     dir_name = '-'.join(parts[:-1])
     dim = parts[-1]
-    path = os.path.join('./data', dir_name, dim, 'index.js')
+    path = os.path.join('./backend/data', dir_name, dim, 'index.js')
     return path
 
 
@@ -92,41 +69,3 @@ def parse_json(path):
     jstr = jstr.replace(",]", "]")
     jstr = jstr.replace("],}", "]}")
     return jstr
-
-
-@app.route('/api/<string:pareto_front>')
-def get_pf(pareto_front):
-    r"""An API endpoint to dispatch Pareto-front data
-
-    This function receives the name of the Pareto-front data to be loaded
-    by the pareto-explorer app. Then it loads the javascript object
-    from the relevant path.
-
-    Parameters
-    ----------
-    pareto_front : str 
-        The API endpoint parameter in string.
-
-    Returns
-    -------
-    data : str
-        A JSON string representation of the javascript object.
-    """
-    print("Received request for " + pareto_front)
-    path = make_path(pareto_front)
-    print("Fetching " + path + ' ...')
-    data = 'null'
-    if os.path.exists(path):
-        data = json.dumps(parse_json(path))
-        print("Dispatching data ...")
-        # print(data)
-    return data
-
-
-@app.route('/', methods=["GET"])
-def index():
-    return app.send_static_file('index.html')
-
-
-if __name__ == "__main__":
-    app.run(host='0.0.0.0', debug=False, port=os.environ.get('PORT', 80))

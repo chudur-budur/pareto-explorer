@@ -22,7 +22,7 @@ class Analytics extends React.Component {
   }
 
   fetchData = () => {
-    fetch("/api/" + this.props.match.params.paretoFront)
+    fetch("/examples_api/" + this.props.match.params.paretoFront)
       .then((res) => res.json())
       .then(
         (result) => {
