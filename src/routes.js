@@ -125,7 +125,7 @@ const routes = [
   { path: "/users/:id", exact: true, name: "User Details", component: User },
   // Routes for paretoexplorer.
   {
-    path: "/analytics/:data",
+    path: "/analytics/:paretoFront",
     exact: true,
     name: "Analytics",
     component: Analytics,
