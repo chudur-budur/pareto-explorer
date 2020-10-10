@@ -23,7 +23,8 @@ import os
 import json
 from flask import Flask
 
-app = Flask(__name__)
+# app = Flask(__name__)
+app = Flask(__name__, static_folder='../../build', static_url_path='')
 
 
 def make_path(pf):
@@ -122,6 +123,10 @@ def get_pf(pareto_front):
     return data
 
 
+@app.route('/', methods=["GET"])
+def index():
+    return app.send_static_file('index.html')
+
+
 if __name__ == "__main__":
-    d = get_pf('cdebmdk-nbi-4d')
-    print(d)
+    app.run(host='0.0.0.0', debug=False, port=os.environ.get('PORT', 80))
