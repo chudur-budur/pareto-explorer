@@ -17,8 +17,8 @@ A [React.js](https://reactjs.org/) app to showcase the capabilities of [pviz](ht
 
 ## Installation
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). It uses Sass (with .scss). The styles are loaded at the template level with `node-sass-chokidar` css preprocessor. Dependencies are handled by **npm**. The backend runs on `flask` and the python requirements can be
-found in the `requirements.txt`.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). It uses Sass (with .scss). The styles are loaded at the template level with `node-sass-chokidar` css preprocessor. The frontend dependencies are handled by **npm** and the backend dependencies are handled by **pip**. The backend runs on `flask` and the python requirements can be
+found in the `requirements.txt`. The backend requires `gunicorn` to be deployed on server.
 
 ### Usage
 
