@@ -35,7 +35,6 @@ found in the `requirements.txt`. The backend requires `gunicorn` to be deployed 
 
 ## See also
 
-- [Create-React-App](CRA.md)
 - [Readme CoreUI React](./COREUI-REACT.md)
 - [Readme CoreUI](./COREUI.md)
 - [Readme Yarn](./YARN.md)
