@@ -29,7 +29,7 @@ found in the `requirements.txt`.
 
 - `npm start` - to run the frontend and development (it runs webpack-dev-server)
 - `npm run start-api` - to run the backend and development
-- `npm run build` - for production build, to run, invoke `npm run start-api`
+- `npm run build` - for production build, to run, invoke `serve -s build`
 - `npm run start-heroku` - to run the production build on heroku (locally)
 - `npm run deploy-heroku` - to deploy the production build on [heroku](https://www.heroku.com/).
 
