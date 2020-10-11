@@ -2,7 +2,7 @@
 
 A [React.js](https://reactjs.org/) app to showcase the capabilities of [pviz](https://github.com/chudur-budur/pviz). Built on top of [CoreUI-React](https://github.com/coreui/coreui-react) and Apache [echarts](https://github.com/apache/incubator-echarts).
 
-## Screenshots
+## Workflow
 
 <p float="left">
   <img src="https://i.postimg.cc/QN7kZL3Z/2020-10-11-07-37-15.gif" width="250" />
@@ -17,20 +17,21 @@ A [React.js](https://reactjs.org/) app to showcase the capabilities of [pviz](ht
 
 ## Installation
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). It uses Sass (with .scss). The styles are loaded at the template level with `node-sass-chokidar` css preprocessor. Dependencies are handled by **npm**. The backend runs on `flask` and the python requirements can be
+found in the `requirements.txt`.
 
-It uses Sass (with .scss). The styles are loaded at the template level with `node-sass-chokidar` css preprocessor
+### Usage
 
-Dependencies are handled by **npm**.
+`$ npm install` - to install dependencies for the frontend
+`$ pip install -r requirements.txt` - to install dependencies for the backend
 
-## Usage
+## Running and Deployment Sctipts
 
-`npm install` - to install dependencies
-
-## Sctipts
-
-`npm start` for developing (it runs webpack-dev-server)  
-`npm run build` to run a dev build
+`npm start` - to run the frontend and development (it runs webpack-dev-server)  
+`npm run start-api` - to run the backend and development
+`npm run build` - for production build, to run, invoke `npm run start-api`
+`npm run start-heroku` - to run the production build on heroku (locally)
+`npm run deploy-heroku` - to deploy the production build on [heroku](https://www.heroku.com/).
 
 ## See also
 
