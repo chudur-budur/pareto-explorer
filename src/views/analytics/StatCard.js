@@ -163,27 +163,27 @@ class StatCard extends React.Component {
                   </CNavLink>
                 </CNavItem>
               )}
-              {/* {this.props.pf.distribution_g && (
+              {this.props.pf.distribution_g && (
                 <CNavItem>
                   <CNavLink>
                     Distribution <b>g</b>
                     <sub>i</sub>
                   </CNavLink>
                 </CNavItem>
-              )} */}
-              {/* {(this.props.pf.mu || this.props.pf.cv) && (
+              )}
+              {(this.props.pf.mu || this.props.pf.cv) && (
                 <CNavItem>
                   <CNavLink>Distribution &mu;&nbsp;/&nbsp;CV</CNavLink>
                 </CNavItem>
-              )} */}
+              )}
             </CNav>
             {this.state.isLoaded ? (
               <CTabContent>
                 {this.renderBoxplotF()}
                 {this.renderBoxplotX()}
-                {/* {this.renderBoxplotG()} */}
-                {/* {(this.props.pf.mu || this.props.pf.cv) &&
-                this.renderPairDistributionPlot()} */}
+                {this.renderBoxplotG()}
+                {(this.props.pf.mu || this.props.pf.cv) &&
+                  this.renderPairDistributionPlot()}
               </CTabContent>
             ) : (
               <Spinner />

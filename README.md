@@ -5,14 +5,15 @@ A [React.js](https://reactjs.org/) app to showcase the capabilities of [pviz](ht
 ## Screenshots
 
 <p float="left">
-  <img src="https://i.postimg.cc/D0Yqfjgk/Screen-Shot-2020-09-30-at-8-37-10-AM.png" width="250" />
-  <img src="https://i.postimg.cc/ryhG9sLn/Screen-Shot-2020-09-30-at-8-37-27-AM.png" width="250" /> 
- <!--</p>
-
-<p float="left">-->
-  <img src="https://i.postimg.cc/63tVMG3S/Screen-Shot-2020-09-30-at-8-37-39-AM.png" width="250" />
-  <img src="https://i.postimg.cc/KjYP2StD/Screen-Shot-2020-09-30-at-8-38-08-AM.png" width="250" /> 
+  <img src="https://i.postimg.cc/QN7kZL3Z/2020-10-11-07-37-15.gif" width="250" />
+  <img src="https://i.postimg.cc/6qxZp3XJ/2020-10-11-07-38-37.gif" width="250" /> 
+  <img src="https://i.postimg.cc/tgV7njDX/2020-10-11-07-48-31.gif" width="250" />
+  <img src="https://i.postimg.cc/BZCbKN51/2020-10-11-07-51-22.gif" width="250" /> 
+  <img src="https://i.postimg.cc/sX4j5DWR/2020-10-11-07-54-07.gif" width="250" />
+  <img src="https://i.postimg.cc/wjR90kN2/2020-10-11-07-57-29.gif" width="250" />
  </p>
+
+### [Try the app!!](https://pareto-explorer.herokuapp.com/#/analytics)
 
 ## Installation
 
