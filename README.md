@@ -22,16 +22,16 @@ found in the `requirements.txt`.
 
 ### Usage
 
-`$ npm install` - to install dependencies for the frontend
-`$ pip install -r requirements.txt` - to install dependencies for the backend
+- `$ npm install` - to install dependencies for the frontend
+- `$ pip install -r requirements.txt` - to install dependencies for the backend
 
 ## Running and Deployment Sctipts
 
-`npm start` - to run the frontend and development (it runs webpack-dev-server)  
-`npm run start-api` - to run the backend and development
-`npm run build` - for production build, to run, invoke `npm run start-api`
-`npm run start-heroku` - to run the production build on heroku (locally)
-`npm run deploy-heroku` - to deploy the production build on [heroku](https://www.heroku.com/).
+- `npm start` - to run the frontend and development (it runs webpack-dev-server)
+- `npm run start-api` - to run the backend and development
+- `npm run build` - for production build, to run, invoke `npm run start-api`
+- `npm run start-heroku` - to run the production build on heroku (locally)
+- `npm run deploy-heroku` - to deploy the production build on [heroku](https://www.heroku.com/).
 
 ## See also
 
