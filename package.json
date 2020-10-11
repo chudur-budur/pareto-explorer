@@ -23,7 +23,7 @@
     "start": "react-scripts start",
     "start-api": "FLASK_APP=backend.app FLASK_ENV=development pipenv run flask run --host=0.0.0.0 --port=80",
     "deploy-heroku": "git push heroku master",
-    "start-heroku": "npm run build && heroku local",
+    "start-heroku": "rm -rf build && react-scripts build && heroku local",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "test:cov": "npm test -- --coverage --watchAll=false",
