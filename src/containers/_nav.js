@@ -23,19 +23,46 @@ export default [
         // to: "/base/breadcrumbs",
         _children: [
           {
-            _tag: "CSidebarNavItem",
-            name: "3D",
-            to: "/analytics/c0dtlz2-nbi-3d",
+            _tag: "CSidebarNavDropdown",
+            name: "NBI",
+            _children: [
+              {
+                _tag: "CSidebarNavItem",
+                name: "3D",
+                to: "/analytics/c0dtlz2-nbi-3d",
+              },
+              {
+                _tag: "CSidebarNavItem",
+                name: "4D",
+                to: "/analytics/c0dtlz2-nbi-4d",
+              },
+              {
+                _tag: "CSidebarNavItem",
+                name: "8D",
+                to: "/analytics/c0dtlz2-nbi-8d",
+              },
+            ],
           },
           {
-            _tag: "CSidebarNavItem",
-            name: "4D",
-            to: "/analytics/c0dtlz2-nbi-4d",
-          },
-          {
-            _tag: "CSidebarNavItem",
-            name: "8D",
-            to: "/analytics/c0dtlz2-nbi-8d",
+            _tag: "CSidebarNavDropdown",
+            name: "Random",
+            _children: [
+              {
+                _tag: "CSidebarNavItem",
+                name: "3D",
+                to: "/analytics/c0dtlz2-3d",
+              },
+              {
+                _tag: "CSidebarNavItem",
+                name: "4D",
+                to: "/analytics/c0dtlz2-4d",
+              },
+              {
+                _tag: "CSidebarNavItem",
+                name: "8D",
+                to: "/analytics/c0dtlz2-8d",
+              },
+            ],
           },
         ],
       },
@@ -45,24 +72,56 @@ export default [
         //to: "/base/breadcrumbs",
         _children: [
           {
-            _tag: "CSidebarNavItem",
-            name: "3D",
-            to: "/analytics/c2dtlz2-nbi-3d",
+            _tag: "CSidebarNavDropdown",
+            name: "NBI",
+            _children: [
+              {
+                _tag: "CSidebarNavItem",
+                name: "3D",
+                to: "/analytics/c2dtlz2-nbi-3d",
+              },
+              {
+                _tag: "CSidebarNavItem",
+                name: "4D",
+                to: "/analytics/c2dtlz2-nbi-4d",
+              },
+              {
+                _tag: "CSidebarNavItem",
+                name: "5D",
+                to: "/analytics/c2dtlz2-nbi-5d",
+              },
+              {
+                _tag: "CSidebarNavItem",
+                name: "8D",
+                to: "/analytics/c2dtlz2-nbi-8d",
+              },
+            ],
           },
           {
-            _tag: "CSidebarNavItem",
-            name: "4D",
-            to: "/analytics/c2dtlz2-nbi-4d",
-          },
-          {
-            _tag: "CSidebarNavItem",
-            name: "5D",
-            to: "/analytics/c2dtlz2-nbi-5d",
-          },
-          {
-            _tag: "CSidebarNavItem",
-            name: "8D",
-            to: "/analytics/c2dtlz2-nbi-8d",
+            _tag: "CSidebarNavDropdown",
+            name: "Random",
+            _children: [
+              {
+                _tag: "CSidebarNavItem",
+                name: "3D",
+                to: "/analytics/c2dtlz2-3d",
+              },
+              {
+                _tag: "CSidebarNavItem",
+                name: "4D",
+                to: "/analytics/c2dtlz2-4d",
+              },
+              {
+                _tag: "CSidebarNavItem",
+                name: "5D",
+                to: "/analytics/c2dtlz2-5d",
+              },
+              {
+                _tag: "CSidebarNavItem",
+                name: "8D",
+                to: "/analytics/c2dtlz2-8d",
+              },
+            ],
           },
         ],
       },
@@ -72,19 +131,46 @@ export default [
         //to: "/base/breadcrumbs",
         _children: [
           {
-            _tag: "CSidebarNavItem",
-            name: "3D",
-            to: "/analytics/cdebmdk-nbi-3d",
+            _tag: "CSidebarNavDropdown",
+            name: "NBI",
+            _children: [
+              {
+                _tag: "CSidebarNavItem",
+                name: "3D",
+                to: "/analytics/cdebmdk-nbi-3d",
+              },
+              {
+                _tag: "CSidebarNavItem",
+                name: "4D",
+                to: "/analytics/cdebmdk-nbi-4d",
+              },
+              {
+                _tag: "CSidebarNavItem",
+                name: "8D",
+                to: "/analytics/cdebmdk-nbi-8d",
+              },
+            ],
           },
           {
-            _tag: "CSidebarNavItem",
-            name: "4D",
-            to: "/analytics/cdebmdk-nbi-4d",
-          },
-          {
-            _tag: "CSidebarNavItem",
-            name: "8D",
-            to: "/analytics/cdebmdk-nbi-8d",
+            _tag: "CSidebarNavDropdown",
+            name: "Random",
+            _children: [
+              {
+                _tag: "CSidebarNavItem",
+                name: "3D",
+                to: "/analytics/cdebmdk-3d",
+              },
+              {
+                _tag: "CSidebarNavItem",
+                name: "4D",
+                to: "/analytics/cdebmdk-4d",
+              },
+              {
+                _tag: "CSidebarNavItem",
+                name: "8D",
+                to: "/analytics/cdebmdk-8d",
+              },
+            ],
           },
         ],
       },
@@ -94,19 +180,29 @@ export default [
         //to: "/base/breadcrumbs",
         _children: [
           {
-            _tag: "CSidebarNavItem",
-            name: "CRASH-3D",
-            to: "/analytics/crash-nbi-3d",
+            _tag: "CSidebarNavDropdown",
+            name: "NBI",
+            _children: [
+              {
+                _tag: "CSidebarNavItem",
+                name: "CRASH-3D",
+                to: "/analytics/crash-nbi-3d",
+              },
+              {
+                _tag: "CSidebarNavItem",
+                name: "CRASH-C1-3D",
+                to: "/analytics/crash-c1-nbi-3d",
+              },
+              {
+                _tag: "CSidebarNavItem",
+                name: "CRASH-C2-3D",
+                to: "/analytics/crash-c2-nbi-3d",
+              },
+            ],
           },
           {
-            _tag: "CSidebarNavItem",
-            name: "CRASH-C1-3D",
-            to: "/analytics/crash-c1-nbi-3d",
-          },
-          {
-            _tag: "CSidebarNavItem",
-            name: "CRASH-C2-3D",
-            to: "/analytics/crash-c2-nbi-3d",
+            _tag: "CSidebarNavDropdown",
+            name: "Random",
           },
         ],
       },
@@ -116,19 +212,46 @@ export default [
         //to: "/base/breadcrumbs",
         _children: [
           {
-            _tag: "CSidebarNavItem",
-            name: "3D",
-            to: "/analytics/debmdk-all-nbi-3d",
+            _tag: "CSidebarNavDropdown",
+            name: "NBI",
+            _children: [
+              {
+                _tag: "CSidebarNavItem",
+                name: "3D",
+                to: "/analytics/debmdk-all-nbi-3d",
+              },
+              {
+                _tag: "CSidebarNavItem",
+                name: "4D",
+                to: "/analytics/debmdk-all-nbi-4d",
+              },
+              {
+                _tag: "CSidebarNavItem",
+                name: "8D",
+                to: "/analytics/debmdk-all-nbi-8d",
+              },
+            ],
           },
           {
-            _tag: "CSidebarNavItem",
-            name: "4D",
-            to: "/analytics/debmdk-all-nbi-4d",
-          },
-          {
-            _tag: "CSidebarNavItem",
-            name: "8D",
-            to: "/analytics/debmdk-all-nbi-8d",
+            _tag: "CSidebarNavDropdown",
+            name: "Random",
+            _children: [
+              {
+                _tag: "CSidebarNavItem",
+                name: "3D",
+                to: "/analytics/debmdk-all-3d",
+              },
+              {
+                _tag: "CSidebarNavItem",
+                name: "4D",
+                to: "/analytics/debmdk-all-4d",
+              },
+              {
+                _tag: "CSidebarNavItem",
+                name: "8D",
+                to: "/analytics/debmdk-all-8d",
+              },
+            ],
           },
         ],
       },
@@ -138,19 +261,46 @@ export default [
         //to: "/base/breadcrumbs",
         _children: [
           {
-            _tag: "CSidebarNavItem",
-            name: "3D",
-            to: "/analytics/debmdk-nbi-3d",
+            _tag: "CSidebarNavDropdown",
+            name: "NBI",
+            _children: [
+              {
+                _tag: "CSidebarNavItem",
+                name: "3D",
+                to: "/analytics/debmdk-nbi-3d",
+              },
+              {
+                _tag: "CSidebarNavItem",
+                name: "4D",
+                to: "/analytics/debmdk-nbi-4d",
+              },
+              {
+                _tag: "CSidebarNavItem",
+                name: "8D",
+                to: "/analytics/debmdk-nbi-8d",
+              },
+            ],
           },
           {
-            _tag: "CSidebarNavItem",
-            name: "4D",
-            to: "/analytics/debmdk-nbi-4d",
-          },
-          {
-            _tag: "CSidebarNavItem",
-            name: "8D",
-            to: "/analytics/debmdk-nbi-8d",
+            _tag: "CSidebarNavDropdown",
+            name: "Random",
+            _children: [
+              {
+                _tag: "CSidebarNavItem",
+                name: "3D",
+                to: "/analytics/debmdk-3d",
+              },
+              {
+                _tag: "CSidebarNavItem",
+                name: "4D",
+                to: "/analytics/debmdk-4d",
+              },
+              {
+                _tag: "CSidebarNavItem",
+                name: "8D",
+                to: "/analytics/debmdk-8d",
+              },
+            ],
           },
         ],
       },
@@ -160,19 +310,46 @@ export default [
         //to: "/base/breadcrumbs",
         _children: [
           {
-            _tag: "CSidebarNavItem",
-            name: "3D",
-            to: "/analytics/dtlz2-nbi-3d",
+            _tag: "CSidebarNavDropdown",
+            name: "NBI",
+            _children: [
+              {
+                _tag: "CSidebarNavItem",
+                name: "3D",
+                to: "/analytics/dtlz2-nbi-3d",
+              },
+              {
+                _tag: "CSidebarNavItem",
+                name: "4D",
+                to: "/analytics/dtlz2-nbi-4d",
+              },
+              {
+                _tag: "CSidebarNavItem",
+                name: "8D",
+                to: "/analytics/dtlz2-nbi-8d",
+              },
+            ],
           },
           {
-            _tag: "CSidebarNavItem",
-            name: "4D",
-            to: "/analytics/dtlz2-nbi-4d",
-          },
-          {
-            _tag: "CSidebarNavItem",
-            name: "8D",
-            to: "/analytics/dtlz2-nbi-8d",
+            _tag: "CSidebarNavDropdown",
+            name: "Random",
+            _children: [
+              {
+                _tag: "CSidebarNavItem",
+                name: "3D",
+                to: "/analytics/dtlz2-3d",
+              },
+              {
+                _tag: "CSidebarNavItem",
+                name: "4D",
+                to: "/analytics/dtlz2-4d",
+              },
+              {
+                _tag: "CSidebarNavItem",
+                name: "8D",
+                to: "/analytics/dtlz2-8d",
+              },
+            ],
           },
         ],
       },
@@ -182,24 +359,56 @@ export default [
         //to: "/base/breadcrumbs",
         _children: [
           {
-            _tag: "CSidebarNavItem",
-            name: "3D",
-            to: "/analytics/dtlz8-nbi-3d",
+            _tag: "CSidebarNavDropdown",
+            name: "NBI",
+            _children: [
+              {
+                _tag: "CSidebarNavItem",
+                name: "3D",
+                to: "/analytics/dtlz8-nbi-3d",
+              },
+              {
+                _tag: "CSidebarNavItem",
+                name: "4D",
+                to: "/analytics/dtlz8-nbi-4d",
+              },
+              {
+                _tag: "CSidebarNavItem",
+                name: "6D",
+                to: "/analytics/dtlz8-nbi-6d",
+              },
+              {
+                _tag: "CSidebarNavItem",
+                name: "8D",
+                to: "/analytics/dtlz8-nbi-8d",
+              },
+            ],
           },
           {
-            _tag: "CSidebarNavItem",
-            name: "4D",
-            to: "/analytics/dtlz8-nbi-4d",
-          },
-          {
-            _tag: "CSidebarNavItem",
-            name: "6D",
-            to: "/analytics/dtlz8-nbi-6d",
-          },
-          {
-            _tag: "CSidebarNavItem",
-            name: "8D",
-            to: "/analytics/dtlz8-nbi-8d",
+            _tag: "CSidebarNavDropdown",
+            name: "Random",
+            _children: [
+              {
+                _tag: "CSidebarNavItem",
+                name: "3D",
+                to: "/analytics/dtlz8-3d",
+              },
+              {
+                _tag: "CSidebarNavItem",
+                name: "4D",
+                to: "/analytics/dtlz8-4d",
+              },
+              {
+                _tag: "CSidebarNavItem",
+                name: "6D",
+                to: "/analytics/dtlz8-6d",
+              },
+              {
+                _tag: "CSidebarNavItem",
+                name: "8D",
+                to: "/analytics/dtlz8-8d",
+              },
+            ],
           },
         ],
       },
@@ -209,9 +418,26 @@ export default [
         //to: "/base/breadcrumbs",
         _children: [
           {
-            _tag: "CSidebarNavItem",
-            name: "10D",
-            to: "/analytics/gaa-nbi-10d",
+            _tag: "CSidebarNavDropdown",
+            name: "NBI",
+            _children: [
+              {
+                _tag: "CSidebarNavItem",
+                name: "10D",
+                to: "/analytics/gaa-nbi-10d",
+              },
+            ],
+          },
+          {
+            _tag: "CSidebarNavDropdown",
+            name: "Random",
+            _children: [
+              {
+                _tag: "CSidebarNavItem",
+                name: "10D",
+                to: "/analytics/gaa-10d",
+              },
+            ],
           },
         ],
       },

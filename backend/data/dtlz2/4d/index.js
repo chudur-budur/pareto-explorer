@@ -1,35 +1,35 @@
 
 var data = {
     // data name 
-    name: "CDEBMDK-NBI",
+    name: "DTLZ2",
     // number of objectives
     m: 4,
     // f-values
     f: require("./f.json"),
     // bounds of f
-    bounds_f: [[0.63913, 0.63913, 0.82605, 1.2069],[2.9859, 2.9859, 3.0829, 3.2705]],
+    bounds_f: [[0.00012117, 3.5292e-06, 0.00031035, 6.6194e-05],[0.98106, 0.99773, 0.97825, 0.98316]],
     // distribution of f
-    distribution_f: [[0.63913, 1.060925, 1.4645305435847233, 1.816075, 2.9859], [0.63913, 1.060925, 1.4645305435847233, 1.816075, 2.9859], [0.82605, 1.3751, 1.8887253476983337, 2.349825, 3.0829], [1.2069, 1.7506, 2.200709794319297, 2.6250750000000003, 3.2705]],
+    distribution_f: [[0.00012117, 0.2565925, 0.4411333785700002, 0.618, 0.98106], [3.5292e-06, 0.25641749999999996, 0.44049867041959867, 0.6153525, 0.99773], [0.00031035, 0.25166, 0.4437243817349998, 0.6235649999999999, 0.97825], [6.6194e-05, 0.25231499999999996, 0.44098680259700024, 0.6243525, 0.98316]],
     // number of variables/points
-    n: 2042,
+    n: 2000,
     // design variables
     x: require("./x.json"),
     // bounds of x
-    bounds_x: [[0.36329, 0.29775, 0.20483],[0.81961, 0.83994, 0.79517]],
+    bounds_x: [[0.117, 0.03843, 0.00010159],[0.99996, 0.9998, 0.99998]],
     // distribution of x
-    distribution_x: [[0.36329, 0.47437, 0.5770408814887369, 0.6934449999999999, 0.81961], [0.29775, 0.42801, 0.5271545592556308, 0.60154, 0.83994], [0.20483, 0.44228, 0.5, 0.55772, 0.79517]],
+    distribution_x: [[0.117, 0.5707225, 0.6965026699999995, 0.8376175, 0.99996], [0.03843, 0.4874175, 0.6316865245, 0.8032050000000001, 0.9998], [0.00010159, 0.2934925, 0.5005722367450001, 0.713165, 0.99998]],
     // number of constraint functions
-    t: 2042,
+    t: 0,
     // constraint function values
-    g: require("./g.json"),
+    g: null,
     // constrint function bounds
-    bounds_g: [-2.1951,-0.00071003],
+    bounds_g: null,
     // distribution of g
-    distribution_g: [[-2.1951, -1.3308, -0.8963154334280118, -0.4101125, -0.00071003]],
+    distribution_g: null,
     // cumulative constraint function values
-    cv: require("./cv.json"),
+    cv: null,
     // color by cv
-    color_cv: require("./color-cv.json"),
+    color_cv: null,
     // centroid distances
     centroid_dist: require("./centroid-dist.json"),
     // color by centroid
