@@ -30,7 +30,7 @@ found in the `requirements.txt`.
 - `npm start` - to run the frontend and development (it runs webpack-dev-server)
 - `npm run start-api` - to run the backend and development
 - `npm run build` - for production build, to run, invoke `serve -s build`
-- `npm run start-heroku` - to locally run the production build on [heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
+- `npm run start-heroku` - to locally run the production build through [heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
 - `npm run deploy-heroku` - to deploy the production build on [heroku](https://www.heroku.com/).
 
 ## See also
