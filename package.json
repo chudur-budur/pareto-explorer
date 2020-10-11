@@ -21,8 +21,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "start-api-pipenv": "cd backend && FLASK_APP=app.py FLASK_ENV=development pipenv run flask run",
-    "start-api": "cd backend && FLASK_APP=app.py FLASK_ENV=development flask run",
+    "start-api": "cd backend && FLASK_APP=app.py FLASK_ENV=development pipenv run flask run",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "test:cov": "npm test -- --coverage --watchAll=false",
