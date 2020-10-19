@@ -75,7 +75,7 @@ export var getCircle2D = (origin, radius, n, z = null) => {
  * @param {*} anchorPrefix
  * @param {*} props
  */
-export var pushAnchors3D = (series, anchors, anchorPrefix = "f", props) => {
+export var pushAnchors3D = (series, anchors, anchorPrefix = "f") => {
   for (let z of anchors) {
     // anchor points
     series.push({
@@ -111,7 +111,7 @@ export var pushAnchors3D = (series, anchors, anchorPrefix = "f", props) => {
       emphasis: { show: false },
     });
     // anchor lines
-    series.push({
+    /* series.push({
       type: "line3D",
       data: z,
       lineStyle: { color: "grey", width: 1.5 },
@@ -132,9 +132,9 @@ export var pushAnchors3D = (series, anchors, anchorPrefix = "f", props) => {
         },
       },
       emphasis: { show: false },
-    });
+    });*/
     // anchor circles
-    series.push({
+    /*series.push({
       type: "line3D",
       data: getCircle2D([0, 0], 1, 50, z[0][2]),
       lineStyle: { color: "lightgrey", width: 1.25 },
@@ -160,13 +160,7 @@ export var pushAnchors3D = (series, anchors, anchorPrefix = "f", props) => {
         },
       },
       emphasis: { show: false },
-    });
-    /* series[0].symbolSize = (value, params) => {
-      getPointSizeFromMu(params, props.psf, props.ksf, props.pf);
-    };
-    series[1].symbolSize = (value, params) => {
-      getPointSizeFromMu(params, props.psf, props.ksf, props.pf);
-    }; */
+    });*/
   }
   return series;
 };

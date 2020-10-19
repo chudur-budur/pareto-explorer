@@ -106,7 +106,7 @@ export class PCPControlForm extends React.Component {
                     mdc="2"
                   />
                 </CFormGroup>
-                {/* <CFormGroup row>
+                <CFormGroup row>
                   <LineWidthSelectionComponent
                     {...this.props}
                     mdl="2"
@@ -117,7 +117,7 @@ export class PCPControlForm extends React.Component {
                     mdl="2"
                     mdc="4"
                   />
-                </CFormGroup> */}
+                </CFormGroup>
               </CForm>
             </CCardBody>
           </CCard>

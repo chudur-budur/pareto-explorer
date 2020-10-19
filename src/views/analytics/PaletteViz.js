@@ -189,12 +189,11 @@ class PaletteViz extends React.PureComponent {
         this.props.pf.muid
       );
     }
-    option.series = pushAnchors3D(
+    /* option.series = pushAnchors3D(
       option.series,
       this.props.pf.palette_anchors,
-      this.props.anchorPrefix,
-      this.props
-    );
+      this.props.anchorPrefix
+    ); */
     return option;
   };
 
