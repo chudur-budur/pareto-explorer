@@ -11,27 +11,25 @@ import { Combination, Permutation } from "js-combinatorics";
 export class CombinatorialAxesSelection extends React.Component {
   constructor(props) {
     super(props);
-    let indices = new Array(this.props.n).fill(0).map((v, i) => i);
-    this.it = new Combination(indices, this.props.r);
     this.state = {
-      axes: this.it.nth(0),
+      axes: [0, 1, 2],
     };
   }
 
-  handleChange = (event) => {
+  handleChange = (event, iter) => {
     let i = event.target.value;
     if (this.props.callBack) {
-      this.props.callBack(this.it.nth(i));
+      this.props.callBack(iter.nth(i));
     }
-    this.setState({ axes: this.it.nth(i) });
+    this.setState({ axes: iter.nth(i) });
     event.preventDefault();
   };
 
-  renderMenuItems = () => {
+  renderMenuItems = (iter) => {
     let menuItems = [];
-    for (let i = 0; i < this.it.length; i++) {
+    for (let i = 0; i < iter.length; i++) {
       let label = "[ ";
-      let axv = this.it.nth(i);
+      let axv = iter.nth(i);
       for (let j = 0; j < axv.length - 1; j++) {
         label = label + "f" + (axv[j] + 1) + ",  ";
       }
@@ -46,15 +44,17 @@ export class CombinatorialAxesSelection extends React.Component {
   };
 
   render() {
+    let indices = new Array(this.props.n).fill(0).map((v, i) => i);
+    let iter = new Combination(indices, this.props.r);
     return (
       <CSelect
         custom
         size="sm"
         name="cas-sel"
         id="cas-sel"
-        onChange={this.handleChange}
+        onChange={(e) => this.handleChange(e, iter)}
       >
-        {this.renderMenuItems()}
+        {this.renderMenuItems(iter)}
       </CSelect>
     );
   }

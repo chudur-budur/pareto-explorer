@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import "echarts-gl";
 import ReactEcharts from "echarts-for-react";
 import {

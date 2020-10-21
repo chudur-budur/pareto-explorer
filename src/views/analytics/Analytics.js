@@ -64,10 +64,12 @@ class Analytics extends React.Component {
   }
 
   render() {
-    const { error, isLoaded, name, data } = this.state;
-    console.log(
+    // const { error, isLoaded, name, data } = this.state;
+    const data = this.state.data;
+    const isLoaded = this.state.isLoaded;
+    /* console.log(
       "name = " + JSON.stringify(name) + ", data.m = " + JSON.stringify(data.m)
-    );
+    ); */
     return (
       <>
         <CContainer fluid className="mr-0 ml-0 pr-0 pl-0 pb-0 pt-0">
