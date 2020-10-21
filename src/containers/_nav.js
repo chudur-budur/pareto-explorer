@@ -208,6 +208,28 @@ export default [
       },
       {
         _tag: "CSidebarNavDropdown",
+        name: "CARSIDE",
+        //to: "/base/breadcrumbs",
+        _children: [
+          {
+            _tag: "CSidebarNavDropdown",
+            name: "NBI",
+            _children: [
+              {
+                _tag: "CSidebarNavItem",
+                name: "3D",
+                to: "/analytics/carside-nbi-3d",
+              },
+            ],
+          },
+          {
+            _tag: "CSidebarNavDropdown",
+            name: "Random",
+          },
+        ],
+      },
+      {
+        _tag: "CSidebarNavDropdown",
         name: "DEBMDK-ALL",
         //to: "/base/breadcrumbs",
         _children: [
