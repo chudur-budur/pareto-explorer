@@ -204,7 +204,7 @@ class PairDistributionPlot extends React.PureComponent {
     }
   };
 
-  getTooltip = (xpos, ypos) => {
+  getTooltip = (xpos, ypos, indices) => {
     let [data, prefix] = this.props.tooltipData;
     let [showMu, showCv] = this.props.showDataFlag;
     let [muStr, cvStr] = this.props.dataNames;
@@ -217,7 +217,7 @@ class PairDistributionPlot extends React.PureComponent {
         animation: false,
       },
       formatter: (params, ticket, callback) => {
-        let idx = params[0].dataIndex;
+        let idx = indices[params[0].dataIndex];
         let vs = formatVecToDom(data[idx], prefix);
         let dom = [`ID : ${idx}`, `${vs}`].join("<br/>");
         if (!showMu && showCv) {
@@ -245,7 +245,7 @@ class PairDistributionPlot extends React.PureComponent {
       this.props.data[1] && this.props.showDataFlag[1],
     ];
     let option = this.getDefaultOption();
-    option.tooltip = this.getTooltip("80%", "10%");
+    option.tooltip = this.getTooltip("80%", "10%", indices);
     option.dataZoom = this.getDataZoom(flags);
     option.grid = this.getGrid(flags);
     option.xAxis = this.getXaxis(flags, indices);
