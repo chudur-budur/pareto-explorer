@@ -133,13 +133,14 @@ class PairDistributionPlot extends React.PureComponent {
     }
   };
 
-  getEmphasis = (data, label) => {
+  getEmphasis = (data, label, indices) => {
     return {
       label: {
         show: true,
         position: "top",
         formatter: (params) => {
-          return label + ": " + data[params.dataIndex].toFixed(2);
+          let idx = indices[params.dataIndex];
+          return label + ": " + data[idx].toFixed(2);
         },
         textStyle: {
           color: "#000",
@@ -165,7 +166,8 @@ class PairDistributionPlot extends React.PureComponent {
           data: mapIndices(this.props.data[0], indices),
           emphasis: this.getEmphasis(
             this.props.data[0],
-            this.props.dataNames[0]
+            this.props.dataNames[0],
+            indices
           ),
         },
         {
@@ -180,7 +182,8 @@ class PairDistributionPlot extends React.PureComponent {
           data: mapIndices(this.props.data[1], indices),
           emphasis: this.getEmphasis(
             this.props.data[1],
-            this.props.dataNames[1]
+            this.props.dataNames[1],
+            indices
           ),
         },
       ];
@@ -198,7 +201,8 @@ class PairDistributionPlot extends React.PureComponent {
         ),
         emphasis: this.getEmphasis(
           flags[0] ? this.props.data[0] : this.props.data[1],
-          flags[0] ? this.props.dataNames[0] : this.props.dataNames[1]
+          flags[0] ? this.props.dataNames[0] : this.props.dataNames[1],
+          indices
         ),
       };
     }
