@@ -1,7 +1,7 @@
 
 var data = {
     // data name 
-    name: "GAA-NBI",
+    name: "GAA-FMINCON-NBI",
     // number of objectives
     m: 10,
     // f-values
