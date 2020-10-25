@@ -185,48 +185,27 @@ export default [
             _children: [
               {
                 _tag: "CSidebarNavItem",
-                name: "CRASH-3D",
+                name: "ALL",
                 to: "/analytics/crash-nbi-3d",
               },
               {
                 _tag: "CSidebarNavItem",
-                name: "CRASH-C1-3D",
+                name: "CLUSTER-1",
                 to: "/analytics/crash-c1-nbi-3d",
               },
               {
                 _tag: "CSidebarNavItem",
-                name: "CRASH-C2-3D",
+                name: "CLUSTER-2",
                 to: "/analytics/crash-c2-nbi-3d",
               },
             ],
-          },
-          {
-            _tag: "CSidebarNavDropdown",
-            name: "Random",
           },
         ],
       },
       {
         _tag: "CSidebarNavDropdown",
         name: "CARSIDE",
-        //to: "/base/breadcrumbs",
-        _children: [
-          {
-            _tag: "CSidebarNavDropdown",
-            name: "NBI",
-            _children: [
-              {
-                _tag: "CSidebarNavItem",
-                name: "3D",
-                to: "/analytics/carside-nbi-3d",
-              },
-            ],
-          },
-          {
-            _tag: "CSidebarNavDropdown",
-            name: "Random",
-          },
-        ],
+        to: "/analytics/carside-nbi-3d",
       },
       {
         _tag: "CSidebarNavDropdown",
@@ -445,8 +424,18 @@ export default [
             _children: [
               {
                 _tag: "CSidebarNavItem",
-                name: "10D",
-                to: "/analytics/gaa-nbi-10d",
+                name: "NSGA3",
+                to: "/analytics/gaa-nsga3-nbi-10d",
+              },
+              {
+                _tag: "CSidebarNavItem",
+                name: "FMINCON",
+                to: "/analytics/gaa-fmincon-nbi-10d",
+              },
+              {
+                _tag: "CSidebarNavItem",
+                name: "OLD",
+                to: "/analytics/gaa-old-nbi-10d",
               },
             ],
           },
@@ -456,8 +445,18 @@ export default [
             _children: [
               {
                 _tag: "CSidebarNavItem",
-                name: "10D",
-                to: "/analytics/gaa-10d",
+                name: "NSGA3",
+                to: "/analytics/gaa-nsga3-10d",
+              },
+              {
+                _tag: "CSidebarNavItem",
+                name: "FMINCON",
+                to: "/analytics/gaa-fmincon-10d",
+              },
+              {
+                _tag: "CSidebarNavItem",
+                name: "OLD",
+                to: "/analytics/gaa-old-10d",
               },
             ],
           },
